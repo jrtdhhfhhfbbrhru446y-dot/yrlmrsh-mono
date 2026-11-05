@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+  --background: #fff;
+  --text: #000;
+  --secondary: #707070;
+  --dot-outline: #909090;
+  --accent: #d60000;
+  --scrim: rgb(0 0 0 / 48%);
+  --font: 'IBM Plex Mono', monospace;
+  --text-size: 17px;
+  --page-left: 24px;
+  --page-right: 80px;
+  --viewport-height: 100dvh;
+  --viewport-width: 100vw;
+  --viewport-top: 0px;
+  --viewport-left: 0px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --chrome-height: min(calc(82px + var(--safe-top)), calc(var(--viewport-height) / 3));
+  --dot-size: 8px;
+  --dot-gap: 10px;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #000;
+  --text: #fff;
+  --secondary: #aaa;
+  --dot-outline: #aaa;
+  --accent: #ff3030;
+  --scrim: rgb(0 0 0 / 60%);
+}

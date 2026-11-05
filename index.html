@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="MONO TASK">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; worker-src 'self'">
+  <title>MONO TASK</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <script src="/theme-boot.js"></script>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+  <button id="menu-button" class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <dialog id="menu-layer" class="menu-layer" aria-label="Меню">
+    <div class="menu-header"><button id="menu-close" class="icon-button menu-close" type="button" aria-label="Закрыть меню">×</button></div>
+    <nav id="navigation" class="menu-surface" aria-label="Разделы и действия"></nav>
+  </dialog>
+  <main id="task-page" class="task-page">
+    <p id="view-label" class="view-label" hidden></p>
+    <div id="task-groups"></div>
+    <details id="completed" hidden><summary>Выполненные</summary><div id="completed-list"></div></details>
+    <p id="error-message" class="error-message" role="alert" hidden></p>
+  </main>
+  <aside id="time-rail" class="time-rail" aria-label="Шкала дня">
+    <div id="time-dots" class="time-dots" role="img"></div>
+    <button id="start-cycle" class="start-cycle" type="button" aria-label="Начать отсчёт"><span aria-hidden="true"></span></button>
+  </aside>
+  <div id="notice" class="notice" role="status" hidden><span id="notice-text"></span><button id="undo-action" type="button">Отменить</button></div>
+  <dialog id="surface" class="surface" aria-labelledby="surface-heading">
+    <header class="surface-header"><h2 id="surface-heading"></h2><button id="surface-close" class="icon-button surface-close" type="button" aria-label="Закрыть">×</button></header>
+    <div class="surface-body"><div id="surface-content"></div><p id="surface-error" class="error-message" role="alert" hidden></p></div>
+  </dialog>
+  <noscript>Для работы задачника необходимо включить JavaScript.</noscript>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
